@@ -1,0 +1,28 @@
+Package: xenLite
+Date: 2024-09-07
+Title: Simple classes and methods for managing Xenium datasets
+Version: 0.0.16
+Authors@R: 
+    c(person(
+        "Vincent", "Carey", role = c("aut", "cre"),
+        email = "stvjc@channing.harvard.edu",
+        comment = c(ORCID = "0000-0003-4046-0063")
+     )
+    )
+Description: Define a relatively light class for managing Xenium data using
+	Bioconductor.  Address use of parquet for coordinates, SpatialExperiment
+	for assay and sample data.  Address serialization and use of cloud storage.
+License: Artistic-2.0
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Suggests: knitr, testthat, BiocStyle, yesno, terra, SpatialFeatureExperiment
+Imports: SpatialExperiment, BiocFileCache, 
+	Matrix, S4Vectors, SummarizedExperiment, methods,
+	utils, HDF5Array, EBImage, shiny, SingleCellExperiment,
+	BiocParallel, arrow, ggplot2,
+	TENxIO, dplyr
+VignetteBuilder: knitr
+biocViews: Infrastructure
+RoxygenNote: 7.3.2
+URL: https://github.com/vjcitn/xenLite
+BugReports: https://github.com/vjcitn/xenLite/issues
