@@ -105,12 +105,16 @@ In `inst/app4`, code is provided to work with the primary dermal melanoma
 dataset.  A map of the cell coordinates can drive focused exploration.  The
 region of interest is shown by a whitened rectangle in the upper left corner.
 
-![](./fblmap.png)
+```{r lkmap,echo=FALSE,fig.cap="Map based on cell centroids."}
+knitr::include_graphics("fblmap.png")
+```
 
 Cells are colored by quintile of size.  Points where FBL transcripts
 are found are plotted as dots.
 
-![](./FBLsketch.png)
+```{r lkzm,echo=FALSE,fig.cap="Zoom to slider-specified subplot."}
+knitr::include_graphics("FBLsketch.png")
+```
 
 More work is needed to identify useful exploratory visualizations.
 

@@ -7,6 +7,7 @@ setClassUnion("ArrowTabOrNULL", c("Table", "ArrowTabular", "arrow_dplyr_query", 
 
 #' manage SpatialExperiment with parquet references
 #' @importClassesFrom SpatialExperiment SpatialExperiment
+#' @importFrom methods slot<- as
 #' @export
 setClass("XenSPEP", contains="SpatialExperiment",  # spatial expt with parquet refs
     representation(cellbounds_path="character",
@@ -20,8 +21,8 @@ setClass("XenSPEP", contains="SpatialExperiment",  # spatial expt with parquet r
 #' @param object instance of XenSPEP
 #' @export
 setMethod("show", "XenSPEP", function(object) {
-  cat("XenSPEP instance.  SCEcomponent:\n")
-  show(as(object, "SingleCellExperiment"))
+  cat("XenSPEP instance.  SPEcomponent:\n")
+  show(as(object, "SpatialExperiment"))
   cat("use spatialCoords() for cell centroids.\n")
   if (!slot(object, "loaded")) {
        cat("Geometry element paths (not loaded):\n")

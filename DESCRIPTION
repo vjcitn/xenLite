@@ -18,7 +18,7 @@ Depends: R (>= 4.1)
 Suggests: knitr, testthat, BiocStyle, yesno, terra, SpatialFeatureExperiment
 Imports: SpatialExperiment, BiocFileCache, 
 	Matrix, S4Vectors, SummarizedExperiment, methods,
-	utils, HDF5Array, EBImage, shiny, SingleCellExperiment,
+	utils, EBImage, shiny,
 	BiocParallel, arrow, ggplot2,
 	TENxIO, dplyr, graphics, stats
 VignetteBuilder: knitr
