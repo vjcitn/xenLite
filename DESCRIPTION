@@ -20,7 +20,7 @@ Imports: SpatialExperiment, BiocFileCache,
 	Matrix, S4Vectors, SummarizedExperiment, methods,
 	utils, HDF5Array, EBImage, shiny, SingleCellExperiment,
 	BiocParallel, arrow, ggplot2,
-	TENxIO, dplyr
+	TENxIO, dplyr, graphics, stats
 VignetteBuilder: knitr
 biocViews: Infrastructure
 RoxygenNote: 7.3.2

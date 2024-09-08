@@ -1,5 +1,11 @@
 
+#  importFrom("graphics", "points", "polygon")
+#  importFrom("methods", "as", "slot<-")
+#  importFrom("stats", "quantile")
+#  importFrom("utils", "unzip")
+
 #' naive polygon viewer
+#' @importFrom graphics points polygon
 #' @param x instance of XenSPEP
 #' @param xlim numeric(2) ordered vector of max and min on x 
 #' @param ylim numeric(2) ordered vector of max and min on y

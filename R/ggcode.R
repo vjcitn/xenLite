@@ -8,6 +8,7 @@ print_xen_ggprep = function(x, ...) {
 }
  
 #' prepare a XenSPEP for ggplot2 visualization
+#' @importFrom stats quantile
 #' @param xsce XenSPEP instance
 #' @param xlim numeric(2)
 #' @param ylim numeric(2)

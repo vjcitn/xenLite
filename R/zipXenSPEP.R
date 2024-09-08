@@ -1,5 +1,5 @@
 #' serialize the collection of XenSPEP and parquet with zip
-#' @importFrom utils zip
+#' @importFrom utils zip unzip
 #' @importFrom methods is
 #' @param xsp instance of XenSPEP with geometry loaded
 #' @param targetfile character(1) destination of zip process
