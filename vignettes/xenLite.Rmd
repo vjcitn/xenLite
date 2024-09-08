@@ -64,7 +64,7 @@ on the contents, producing a XenSPEP instance which was then saved
 in an HDF5-backed representation.  This, along with the parquet
 files for cell, nucleus, and transcript coordinates, are zipped together
 and placed in an Open Storage Network bucket for retrieval via
-`cache_xen_sk`.
+`cache_xen_pdmel_lite`.
 
 - **Human prostate adenocarcinoma** [FFPE Human pan tissue dataset](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-prostate).  For this dataset, we
 retrieved the `outs.zip` file from this site and ran `XenSCE::ingest_xen`
@@ -72,7 +72,7 @@ on the contents, producing a XenSPEP instance which was then saved
 in an HDF5-backed representation.  This, along with the parquet
 files for cell, nucleus, and transcript coordinates, are zipped together
 and placed in an Open Storage Network bucket for retrieval via
-`cache_xen_prost`.
+`cache_xen_prost_lite`.
 
 - **Human Lung** [FFPE Lung cancer preview](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard), 
 Use `example(cache_xen_luad)` to obtain this instance of XenSPEP.
@@ -116,7 +116,7 @@ More work is needed to identify useful exploratory visualizations.
 
 ### Large disk-based example
 
-#### HDF5+parquet-backed example
+#### HDF5+parquet-backed example: *not ready in xenLite*
 
 We want to be able to accommodate very large numbers of
 cells and transcripts without heavy infrastructure
@@ -124,20 +124,20 @@ commitments.
 
 We'll use the prostate adenocarcinoma 5K dataset to demonstrate.
 A 900MB zip file will be cached.
-```{r doprost1}
-prost = cache_xen_prost()
+```{r doprost1,eval=FALSE}
+prost = cache_xen_prost_lite()
 ```
 `prost` is the path to a zip file in a BiocFileCache instance.
 
 Create a folder to work in, and unzip.
-```{r doprost2}
+```{r doprost2,eval=FALSE}
 dir.create(xpw <- file.path(tempdir(), "prost_work"))
 unzip(prost, exdir=xpw)
 dir(xpw)
 ```
 
 Restore the SpatialExperiment component.
-```{r doprost3}
+```{r doprost3,eval=FALSE}
 prostx = HDF5Array::loadHDF5SummarizedExperiment(file.path(xpw, "xen_prost"))
 prostx
 ```

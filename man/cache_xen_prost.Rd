@@ -12,7 +12,7 @@ cache_xen_prost(
 \arguments{
 \item{cache}{defaults to BiocFileCache::BiocFileCache()}
 
-\item{url}{location where tiff file can be retrieved}
+\item{url}{location where zip file can be retrieved}
 }
 \description{
 cache and/or retrieve path to xenium human prostate adenocarcinoma, 5k genes

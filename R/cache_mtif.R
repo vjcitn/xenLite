@@ -52,7 +52,7 @@ cache_sfeLung = function(cache=BiocFileCache::BiocFileCache(),
 
 #' cache and/or retrieve path to xenium human prostate adenocarcinoma, 5k genes
 #' @param cache defaults to BiocFileCache::BiocFileCache()
-#' @param url location where tiff file can be retrieved
+#' @param url location where zip file can be retrieved
 #' @note Retrieves path to a 912MB zip file.  This
 #' includes a 'saved' HDF5-backed SpatialExperiment and
 #' parquet files for cell, nucleus, and transcript coordinates.
@@ -84,7 +84,7 @@ cache_xen_prost = function(cache=BiocFileCache::BiocFileCache(),
 
 #' cache and/or retrieve path to xenium human primary melanoma, 5k genes
 #' @param cache defaults to BiocFileCache::BiocFileCache()
-#' @param url location where tiff file can be retrieved
+#' @param url location where zip file can be retrieved
 #' @note Retrieves path to a 1.05GB zip file.  The zip file
 #' includes a 'saved' HDF5-backed SpatialExperiment and
 #' parquet files for cell, nucleus, and transcript coordinates.
@@ -117,7 +117,7 @@ cache_xen_sk = function(cache=BiocFileCache::BiocFileCache(),
 #' cache and/or retrieve path to Xenium Lung Adenocarcinoma example data, zipped SPEP
 #' accompanied by parquet
 #' @param cache defaults to BiocFileCache::BiocFileCache()
-#' @param url location where tiff file can be retrieved
+#' @param url location where zip file can be retrieved
 #' @examples
 #' if (interactive()) {
 #'    pa = cache_xen_luad()
@@ -128,8 +128,44 @@ cache_xen_sk = function(cache=BiocFileCache::BiocFileCache(),
 #' }
 #' @export
 cache_xen_luad = function(cache=BiocFileCache::BiocFileCache(), 
-   url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/luad2.zip") {
- chk = bfcquery(cache, "BiocXenData/luad2.zip")
+   url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/luad_lite.zip") {
+ chk = bfcquery(cache, "BiocXenData/luad_lite.zip")
+ n = nrow(chk)
+ if (n>=1) return(chk[n,]$rpath)
+ bfcadd(cache, rname=basename(url), fpath=url, action="copy", download=TRUE)
+}
+
+#' counts-in-memory version of prostate 5k dataset
+#' @param cache defaults to BiocFileCache::BiocFileCache()
+#' @param url location where zip file can be retrieved
+#' @examples
+#' if (interactive()) {
+#'    pa = cache_xen_prost_lite()
+#'    prost_lite = restoreZipXenSPEP(pa)
+#'    print(prost_lite)
+#' }
+#' @export
+cache_xen_prost_lite = function(cache=BiocFileCache::BiocFileCache(), 
+   url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/prost_lite.zip") {
+ chk = bfcquery(cache, "BiocXenData/prost_lite.zip")
+ n = nrow(chk)
+ if (n>=1) return(chk[n,]$rpath)
+ bfcadd(cache, rname=basename(url), fpath=url, action="copy", download=TRUE)
+}
+
+#' counts-in-memory version of melanoma 5k dataset
+#' @param cache defaults to BiocFileCache::BiocFileCache()
+#' @param url location where zip file can be retrieved
+#' @examples
+#' if (interactive()) {
+#'    pa = cache_xen_pdmel_lite()
+#'    pdmel_lite = restoreZipXenSPEP(pa)
+#'    print(pdmel_lite)
+#' }
+#' @export
+cache_xen_pdmel_lite = function(cache=BiocFileCache::BiocFileCache(), 
+   url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/pdmel_lite.zip") {
+ chk = bfcquery(cache, "BiocXenData/pdmel_lite.zip")
  n = nrow(chk)
  if (n>=1) return(chk[n,]$rpath)
  bfcadd(cache, rname=basename(url), fpath=url, action="copy", download=TRUE)

@@ -7,13 +7,13 @@ accompanied by parquet}
 \usage{
 cache_xen_luad(
   cache = BiocFileCache::BiocFileCache(),
-  url = "https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/luad2.zip"
+  url = "https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/luad_lite.zip"
 )
 }
 \arguments{
 \item{cache}{defaults to BiocFileCache::BiocFileCache()}
 
-\item{url}{location where tiff file can be retrieved}
+\item{url}{location where zip file can be retrieved}
 }
 \description{
 cache and/or retrieve path to Xenium Lung Adenocarcinoma example data, zipped SPEP
