@@ -27,13 +27,13 @@ A shiny app is available.  Some screenshots of earlier versions follow.
 
 The rectangle shows a region of interest, selectable using sliders:
 
-![](man/figures/napp2.png)
+![](man/figures/nappma2.png)
 
 The details can include positions of transcripts for selected genes:
 
-![](man/figures/nappma2.png)
+![](man/figures/napp2.png)
 
-CD4-expressing cells seem complementary to those expressing EPCAM.
+CD4-expressing cells seem spatially complementary to those expressing EPCAM.
 
 ![](man/figures/nappcd.png)
 
