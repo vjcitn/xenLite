@@ -27,15 +27,15 @@ A shiny app is available.  Some screenshots of earlier versions follow.
 
 The rectangle shows a region of interest, selectable using sliders:
 
-![](man/figures/newappmap.png)
+![](man/figures/napp2.png)
 
 The details can include positions of transcripts for selected genes:
 
-![](man/figures/newapp.png)
+![](man/figures/nappma2.png)
 
 CD4-expressing cells seem complementary to those expressing EPCAM.
 
-![](man/figures/newappcd4.png)
+![](man/figures/nappcd.png)
 
 An example is available at [shinyapps.io](https://vjcitn.shinyapps.io/XenLUAD).
 

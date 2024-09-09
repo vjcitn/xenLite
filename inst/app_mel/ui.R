@@ -2,7 +2,11 @@ library(shiny)
 library(xenLite)
 library(SpatialExperiment)
 
-if (!exists("xspep"))    xspep = restoreZipXenSPEP("pdmel_lite.zip")
+if (!exists("xspep"))   {
+  if (file.exists("pdmel_lite.zip")) xspep = restoreZipXenSPEP("pdmel_lite.zip")
+  else if (file.exists("~/pdmel_lite.zip")) xspep = restoreZipXenSPEP("~/pdmel_lite.zip")
+  }
+what = "pdMel"
 
 what = "PDMel"
 
