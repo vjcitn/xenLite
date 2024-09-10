@@ -18,3 +18,6 @@ serialize the collection of XenSPEP and parquet with zip
 a .rds and three parquet files are zipped together for restoration
 by `restoreZipXenSPEP`.  The outcome is `paste0(targetfile, ".zip")`.
 }
+\examples{
+zipXenSPEP
+}

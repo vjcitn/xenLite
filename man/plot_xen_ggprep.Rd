@@ -19,3 +19,9 @@ plot method for ggplot2-prepared XenSPEP
 \note{
 roxygen had problems with this
 }
+\examples{
+pa = cache_xen_luad()
+luad = restoreZipXenSPEP(pa)
+hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
+plot_xen_ggprep(hh)
+}

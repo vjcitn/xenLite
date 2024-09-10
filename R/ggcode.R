@@ -2,7 +2,6 @@
 #' print method for ggplot2-prepared XenSPEP
 #' @param x instance of S3 class `xen_ggprep`
 #' @param \dots not used
-#' @export
 print_xen_ggprep = function(x, ...) {
   cat(sprintf("xen_ggprep instance for %d cells with %d cell boundary vertices.\n", ncol(x$sampd), nrow(x$bounds)))
 }
@@ -17,6 +16,10 @@ print_xen_ggprep = function(x, ...) {
 #' @return a list with components `bounds` (data.frame including relevant colData
 #' rows (all colData variables) and cell boundary coordinates) and `txdata`, a filtered
 #' arrow Table.
+#' @examples
+#' pa = cache_xen_luad()
+#' luad = restoreZipXenSPEP(pa)
+#' hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
 #' @export
 ggprep_seg = function(xsce, xlim=c(5800,6200), ylim=c(6300, 6700)) {
   sampd = as.data.frame(SummarizedExperiment::colData(xsce)) # 'population level' quantiles
@@ -41,6 +44,11 @@ ggprep_seg = function(xsce, xlim=c(5800,6200), ylim=c(6300, 6700)) {
 #' @param y not used
 #' @param \dots not used
 #' @note roxygen had problems with this
+#' @examples
+#' pa = cache_xen_luad()
+#' luad = restoreZipXenSPEP(pa)
+#' hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
+#' plot_xen_ggprep(hh)
 #' @export
 plot_xen_ggprep = function(x, y, ...) {
   ggplot(x$bounds, aes(x=vertex_x, y=vertex_y, group=cell_id, colour=sizq, fill=sizq)) + 

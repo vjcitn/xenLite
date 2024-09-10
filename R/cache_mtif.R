@@ -2,6 +2,14 @@
 #' @import BiocFileCache
 #' @param cache defaults to BiocFileCache::BiocFileCache()
 #' @param url location where tiff file can be retrieved
+#' @note The tiff file was retrieved after running SFEData::XeniumOutput("v2"),
+#' and depicts a pancreas tissue sample.
+#' @examples
+#' pa = cache_mtif()
+#' if (!requireNamespace("tiff")) stop("install tiff package to run this example")
+#' x = tiff::readTIFF(pa)
+#' plot(0, xlim=c(0,1000), ylim=c(0,1000),xlab=" ", ylab=" ")
+#' rasterImage(x*5.5, 0, 0, 1000, 1000)
 #' @export
 cache_mtif = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/morphology_focus_0001.ome.tif") {

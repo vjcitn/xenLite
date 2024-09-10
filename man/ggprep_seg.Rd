@@ -25,3 +25,8 @@ prepare a XenSPEP for ggplot2 visualization
 This is idiosyncratic.  Quintiles of cell_area are produced, and transcript locations
 are filtered
 }
+\examples{
+pa = cache_xen_luad()
+luad = restoreZipXenSPEP(pa)
+hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
+}

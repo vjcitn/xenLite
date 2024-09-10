@@ -13,8 +13,13 @@ clip_rect(xsce, xlim, ylim)
 \item{xlim}{numeric(2)}
 
 \item{ylim}{numeric(2)}
+
+\item{Could}{be too RAM-hungry.}
 }
 \description{
 restrict XenSPEP to cells with centroids in specified rectangle,
 also restrict boundary and transcript location features
+}
+\examples{
+args(clip_rect)
 }

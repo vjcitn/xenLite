@@ -1,6 +1,9 @@
 #' XenSPEP (SpatialExperiment with parquet references) constructor
 #' @importFrom SummarizedExperiment colData<-
 #' @param folder character(1) 'standard' Xenium output folder
+#' @examples
+#' # is not used yet
+#' args(XenSPEP)
 #' @export
 XenSPEP = function(folder) {
   stopifnot(file.exists(cfmpath <- file.path(folder, "cell_feature_matrix.tar.gz")))

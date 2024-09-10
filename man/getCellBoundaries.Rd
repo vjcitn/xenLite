@@ -12,3 +12,6 @@ getCellBoundaries(x)
 \description{
 method for cell boundary extraction
 }
+\examples{
+showMethods("getCellBoundaries")
+}

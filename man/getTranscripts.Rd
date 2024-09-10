@@ -12,3 +12,6 @@ getTranscripts(x)
 \description{
 method for transcript extraction
 }
+\examples{
+showMethods("getTranscripts")
+}

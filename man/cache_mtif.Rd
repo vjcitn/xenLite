@@ -18,3 +18,14 @@ cache_mtif(
 \description{
 cache and/or retrieve path to an ome.tif file for demonstration
 }
+\note{
+The tiff file was retrieved after running SFEData::XeniumOutput("v2"),
+and depicts a pancreas tissue sample.
+}
+\examples{
+pa = cache_mtif()
+if (!requireNamespace("tiff")) stop("install tiff package to run this example")
+x = tiff::readTIFF(pa)
+plot(0, xlim=c(0,1000), ylim=c(0,1000),xlab=" ", ylab=" ")
+rasterImage(x*5.5, 0, 0, 1000, 1000)
+}

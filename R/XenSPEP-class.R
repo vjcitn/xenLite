@@ -89,15 +89,22 @@ xdims = function (x)
 
 #' method for transcript extraction
 #' @param x instance of XenSPEP
+#' @examples
+#' showMethods("getTranscripts")
 #' @export
 setGeneric("getTranscripts", function(x) standardGeneric("getTranscripts"))
+
 #' method for transcript extraction
 #' @param x instance of XenSPEP
+#' @examples
+#' showMethods("getTranscripts")
 #' @export
 setMethod("getTranscripts", "XenSPEP", function(x) slot(x, "txtab"))
 
 #' method for cell boundary extraction
 #' @param x instance of XenSPEP
+#' @examples
+#' showMethods("getCellBoundaries")
 #' @export
 setGeneric("getCellBoundaries", function(x) standardGeneric("getCellBoundaries"))
 #' method for cell boundary extraction
@@ -107,6 +114,8 @@ setMethod("getCellBoundaries", "XenSPEP", function(x) slot(x, "cbtab"))
 
 #' method for nucleus boundary extraction
 #' @param x instance of XenSPEP
+#' @examples
+#' showMethods("getNucleusBoundaries")
 #' @export
 setGeneric("getNucleusBoundaries", function(x) standardGeneric("getNucleusBoundaries"))
 #' method for nucleus boundary extraction

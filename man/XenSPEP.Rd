@@ -12,3 +12,7 @@ XenSPEP(folder)
 \description{
 XenSPEP (SpatialExperiment with parquet references) constructor
 }
+\examples{
+# is not used yet
+args(XenSPEP)
+}

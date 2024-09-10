@@ -5,6 +5,8 @@
 #' @param targetfile character(1) destination of zip process
 #' @note a .rds and three parquet files are zipped together for restoration
 #' by `restoreZipXenSPEP`.  The outcome is `paste0(targetfile, ".zip")`.
+#' @examples
+#' zipXenSPEP
 #' @export
 zipXenSPEP = function(xsp, targetfile) {
   stopifnot(is(xsp, "XenSPEP"))
@@ -22,6 +24,11 @@ zipXenSPEP = function(xsp, targetfile) {
 #' @return instance of XenSPEP
 #' @note Session folder position will change with setwd(), on.exit ensures return to 
 #' position when started.
+#' @examples
+#' # used implicitly
+#' if (interactive()) {
+#' example(cache_xen_luad)
+#' }
 #' @export
 restoreZipXenSPEP = function(zipf, exdir=tempdir()) {
   ini = getwd()

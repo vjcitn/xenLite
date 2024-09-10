@@ -12,3 +12,19 @@ ingest_xen(folder)
 \description{
 produce a pre-loaded XenSPEP (SpatialExperiment with parquet references)
 }
+\examples{
+chkns = function(pkstring) {
+if (!requireNamespace(pkstring)) {
+  message(sprintf("install \%s to use this feature; returning NULL", pkstring))
+  return(NULL)
+  }
+}
+chkns("SFEData")
+chkns("HDF5Array")
+chkns("SingleCellExperiment")
+td = tempdir()
+z = SFEData::XeniumOutput("v2", td)
+ii = ingest_xen(file.path(td, "xenium2"))
+print(validObject(ii))
+plot(SpatialExperiment::spatialCoords(ii), pch=".")
+}

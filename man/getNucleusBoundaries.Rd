@@ -12,3 +12,6 @@ getNucleusBoundaries(x)
 \description{
 method for nucleus boundary extraction
 }
+\examples{
+showMethods("getNucleusBoundaries")
+}
