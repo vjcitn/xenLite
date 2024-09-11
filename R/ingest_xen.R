@@ -1,5 +1,6 @@
 
 #' produce a pre-loaded XenSPEP (SpatialExperiment with parquet references)
+#' @import Matrix SingleCellExperiment HDF5Array
 #' @param folder character(1) 'standard' Xenium output folder
 #' @examples
 #' chkns = function(pkstring) {
@@ -11,11 +12,13 @@
 #' chkns("SFEData")
 #' chkns("HDF5Array")
 #' chkns("SingleCellExperiment")
+#' if (requireNamespace("SFEData")) {
 #' td = tempdir()
 #' z = SFEData::XeniumOutput("v2", td)
 #' ii = ingest_xen(file.path(td, "xenium2"))
 #' print(validObject(ii))
 #' plot(SpatialExperiment::spatialCoords(ii), pch=".")
+#' }
 #' @export
 ingest_xen = function(folder) {
   stopifnot(file.exists(cmetapath <- file.path(folder, "cells.parquet")))

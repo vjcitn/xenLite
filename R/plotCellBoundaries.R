@@ -52,7 +52,7 @@ txfeatsInBox = function (xsce, feat="transcripts", xlim, ylim)  # may have colna
 #' @param xsce XenSPEP instance
 #' @param xlim numeric(2)
 #' @param ylim numeric(2)
-#' @param Could be too RAM-hungry.
+#' @note Could be too RAM-hungry.
 #' @examples
 #' args(clip_rect)
 #' @export

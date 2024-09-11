@@ -15,11 +15,12 @@ Description: Define a relatively light class for managing Xenium data using
 License: Artistic-2.0
 Encoding: UTF-8
 Depends: R (>= 4.1)
-Suggests: knitr, testthat, BiocStyle, yesno, terra, SpatialFeatureExperiment
+Suggests: knitr, testthat, BiocStyle, yesno, terra, 
+	SpatialFeatureExperiment, SFEData, tiff
 Imports: SpatialExperiment, BiocFileCache, 
 	Matrix, S4Vectors, SummarizedExperiment, methods,
-	utils, EBImage, shiny,
-	BiocParallel, arrow, ggplot2,
+	utils, EBImage, shiny, HDF5Array,
+	arrow, ggplot2, SingleCellExperiment,
 	TENxIO, dplyr, graphics, stats
 VignetteBuilder: knitr
 biocViews: Infrastructure

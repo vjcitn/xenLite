@@ -22,9 +22,11 @@ if (!requireNamespace(pkstring)) {
 chkns("SFEData")
 chkns("HDF5Array")
 chkns("SingleCellExperiment")
+if (requireNamespace("SFEData")) {
 td = tempdir()
 z = SFEData::XeniumOutput("v2", td)
 ii = ingest_xen(file.path(td, "xenium2"))
 print(validObject(ii))
 plot(SpatialExperiment::spatialCoords(ii), pch=".")
+}
 }
