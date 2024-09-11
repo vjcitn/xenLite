@@ -9,6 +9,9 @@ XenSPEP(folder)
 \arguments{
 \item{folder}{character(1) 'standard' Xenium output folder}
 }
+\value{
+instance of XenSPEP
+}
 \description{
 XenSPEP (SpatialExperiment with parquet references) constructor
 }

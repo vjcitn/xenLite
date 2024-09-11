@@ -3,6 +3,7 @@
 #' @param base folder path where parquet files are found
 #' @note Will prepend current folder path to parquet-oriented
 #' slot values.
+#' @return XenSPEP instance
 #' @export
 reset_parq_paths = function(xsp, base) {
   xsp@cellbounds_path = file.path(base, basename(xsp@cellbounds_path))

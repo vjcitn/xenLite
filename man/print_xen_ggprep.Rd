@@ -11,6 +11,9 @@ print_xen_ggprep(x, ...)
 
 \item{\dots}{not used}
 }
+\value{
+operates with cat()
+}
 \description{
 print method for ggplot2-prepared XenSPEP
 }

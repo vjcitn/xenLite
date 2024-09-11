@@ -17,6 +17,9 @@ view_seg(x, xlim, ylim, show_tx = FALSE, ...)
 
 \item{\dots}{passed to polygon()}
 }
+\value{
+run for side effect of plotting
+}
 \description{
 naive polygon viewer
 }

@@ -5,6 +5,7 @@
 #' @param targetfile character(1) destination of zip process
 #' @note a .rds and three parquet files are zipped together for restoration
 #' by `restoreZipXenSPEP`.  The outcome is `paste0(targetfile, ".zip")`.
+#' @return output of zip()
 #' @examples
 #' zipXenSPEP
 #' @export

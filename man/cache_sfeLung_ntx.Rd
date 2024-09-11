@@ -14,6 +14,9 @@ cache_sfeLung_ntx(
 
 \item{url}{location where zip file can be retrieved}
 }
+\value{
+path to cached resource
+}
 \description{
 cache and/or retrieve path to an SFE of V1 lung demo data from 10x
 }

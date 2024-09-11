@@ -11,6 +11,9 @@ zipXenSPEP(xsp, targetfile)
 
 \item{targetfile}{character(1) destination of zip process}
 }
+\value{
+output of zip()
+}
 \description{
 serialize the collection of XenSPEP and parquet with zip
 }

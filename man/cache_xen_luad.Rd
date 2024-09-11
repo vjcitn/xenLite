@@ -15,6 +15,9 @@ cache_xen_luad(
 
 \item{url}{location where zip file can be retrieved}
 }
+\value{
+path to cached resource
+}
 \description{
 cache and/or retrieve path to Xenium Lung Adenocarcinoma example data, zipped SPEP
 accompanied by parquet

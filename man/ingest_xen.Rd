@@ -9,6 +9,9 @@ ingest_xen(folder)
 \arguments{
 \item{folder}{character(1) 'standard' Xenium output folder}
 }
+\value{
+instance of XenSPEP
+}
 \description{
 produce a pre-loaded XenSPEP (SpatialExperiment with parquet references)
 }

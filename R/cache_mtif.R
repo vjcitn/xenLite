@@ -4,6 +4,7 @@
 #' @param url location where tiff file can be retrieved
 #' @note The tiff file was retrieved after running SFEData::XeniumOutput("v2"),
 #' and depicts a pancreas tissue sample.
+#' @return path to cached resource
 #' @examples
 #' pa = cache_mtif()
 #' if (!requireNamespace("tiff")) stop("install tiff package to run this example")
@@ -22,6 +23,7 @@ cache_mtif = function(cache=BiocFileCache::BiocFileCache(),
 #' cache and/or retrieve path to an SFE of V1 lung demo data from 10x
 #' @param cache defaults to BiocFileCache::BiocFileCache()
 #' @param url location where zip file can be retrieved
+#' @return path to cached resource
 #' @note Lacks transcript coordinates
 cache_sfeLung_ntx = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/sfeLung.zip") {
@@ -35,6 +37,7 @@ cache_sfeLung_ntx = function(cache=BiocFileCache::BiocFileCache(),
 #' accompanied by parquet
 #' @param cache defaults to BiocFileCache::BiocFileCache()
 #' @param url location where zip file can be retrieved
+#' @return path to cached resource
 #' @examples
 #' if (interactive()) {
 #'    pa = cache_xen_luad()
@@ -55,6 +58,7 @@ cache_xen_luad = function(cache=BiocFileCache::BiocFileCache(),
 #' counts-in-memory version of prostate 5k dataset
 #' @param cache defaults to BiocFileCache::BiocFileCache()
 #' @param url location where zip file can be retrieved
+#' @return path to cached resource
 #' @examples
 #' if (interactive()) {
 #'    pa = cache_xen_prost_lite()
@@ -73,6 +77,7 @@ cache_xen_prost_lite = function(cache=BiocFileCache::BiocFileCache(),
 #' counts-in-memory version of melanoma 5k dataset
 #' @param cache defaults to BiocFileCache::BiocFileCache()
 #' @param url location where zip file can be retrieved
+#' @return path to cached resource
 #' @examples
 #' if (interactive()) {
 #'    pa = cache_xen_pdmel_lite()

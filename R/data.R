@@ -2,6 +2,7 @@
 #' @docType data
 #' @format character()
 #' @note named character vector with values gene symbols, name ENSG ids
+#' @return character vector
 #' @examples
 #' data(e79sym)
 #' head(e79sym)

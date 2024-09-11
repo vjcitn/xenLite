@@ -11,6 +11,7 @@
 #' @param ylim numeric(2) ordered vector of max and min on y
 #' @param show_tx logical(1) display transcript locations if TRUE, defaults to FALSE.
 #' @param \dots passed to polygon()
+#' @return run for side effect of plotting
 #' @note This is more RAM-sparing than clip_rect followed by view.
 #' @examples
 #' luad = cache_xen_luad()

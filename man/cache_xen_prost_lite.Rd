@@ -14,6 +14,9 @@ cache_xen_prost_lite(
 
 \item{url}{location where zip file can be retrieved}
 }
+\value{
+path to cached resource
+}
 \description{
 counts-in-memory version of prostate 5k dataset
 }

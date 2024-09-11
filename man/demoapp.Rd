@@ -9,6 +9,9 @@ demoapp(simple = FALSE)
 \arguments{
 \item{simple}{logical(1) if TRUE, use a cached tiff for illustration}
 }
+\value{
+No value returned, run for side effect of app initiation.
+}
 \description{
 simple app to explore an image
 }

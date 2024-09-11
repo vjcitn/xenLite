@@ -9,6 +9,9 @@ loadGeometry(x)
 \arguments{
 \item{x}{instance of XenSPEP}
 }
+\value{
+instance of XenSPEP
+}
 \description{
 read and bind parquet data to XenSPEP
 }

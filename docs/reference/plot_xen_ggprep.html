@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xenLite</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.17</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.19</span>
       </span>
     </div>
 
@@ -72,11 +72,25 @@
 <dd><p>not used</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    <p>ggplot</p>
+    </div>
     <div id="note">
     <h2>Note</h2>
     <p>roxygen had problems with this</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">pa</span> <span class="op">=</span> <span class="fu"><a href="cache_xen_luad.html">cache_xen_luad</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">luad</span> <span class="op">=</span> <span class="fu"><a href="restoreZipXenSPEP.html">restoreZipXenSPEP</a></span><span class="op">(</span><span class="va">pa</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>transcripts.parquet etc. will be overwritten</span>
+<span class="r-in"><span><span class="va">hh</span> <span class="op">=</span> <span class="fu"><a href="ggprep_seg.html">ggprep_seg</a></span><span class="op">(</span><span class="va">luad</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4000</span>,<span class="fl">4500</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">2500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">plot_xen_ggprep</span><span class="op">(</span><span class="va">hh</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="plot_xen_ggprep-1.png" alt="" width="700" height="433"></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

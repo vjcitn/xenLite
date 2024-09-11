@@ -10,6 +10,9 @@ character()
 \usage{
 e79sym
 }
+\value{
+character vector
+}
 \description{
 mapping from ENSG to symbols based on EnsDb.Hsapiens.v79
 }

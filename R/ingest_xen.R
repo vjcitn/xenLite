@@ -2,6 +2,7 @@
 #' produce a pre-loaded XenSPEP (SpatialExperiment with parquet references)
 #' @import Matrix SingleCellExperiment HDF5Array
 #' @param folder character(1) 'standard' Xenium output folder
+#' @return instance of XenSPEP
 #' @examples
 #' chkns = function(pkstring) {
 #' if (!requireNamespace(pkstring)) {

@@ -10,6 +10,9 @@ xdims(x)
 \arguments{
 \item{x}{instance of XenSCE}
 }
+\value{
+data.frame
+}
 \description{
 helper function for XenSCE show method, producing dimensions for
 geometry information

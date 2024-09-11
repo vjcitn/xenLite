@@ -14,6 +14,9 @@ cache_xen_pdmel_lite(
 
 \item{url}{location where zip file can be retrieved}
 }
+\value{
+path to cached resource
+}
 \description{
 counts-in-memory version of melanoma 5k dataset
 }

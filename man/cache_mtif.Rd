@@ -15,6 +15,9 @@ cache_mtif(
 
 \item{url}{location where tiff file can be retrieved}
 }
+\value{
+path to cached resource
+}
 \description{
 cache and/or retrieve path to an ome.tif file for demonstration
 }

@@ -9,6 +9,9 @@
 \arguments{
 \item{object}{instance of XenSPEP}
 }
+\value{
+operates with cat()
+}
 \description{
 display aspects of XenSPEP
 }

@@ -17,6 +17,9 @@
 
 \item{drop}{logical(1)}
 }
+\value{
+XenSPEP instance
+}
 \description{
 formal bracket definition, that leaves parquet geometry information alone.
 }

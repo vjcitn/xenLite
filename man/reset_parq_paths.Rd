@@ -11,6 +11,9 @@ reset_parq_paths(xsp, base)
 
 \item{base}{folder path where parquet files are found}
 }
+\value{
+XenSPEP instance
+}
 \description{
 utility for dealing with cached Xen_SPEP in temp folder
 }

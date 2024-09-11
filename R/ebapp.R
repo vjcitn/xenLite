@@ -4,6 +4,7 @@
 #' @import shiny
 #' @param simple logical(1) if TRUE, use a cached tiff for illustration
 #' @note Navigate file input control to location of tiffs
+#' @return No value returned, run for side effect of app initiation.
 #' @examples
 #' if (interactive()) demoapp(simple=TRUE)
 #' @export

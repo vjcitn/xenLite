@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xenLite</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.17</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.19</span>
       </span>
     </div>
 
@@ -80,6 +80,10 @@
 <dd><p>passed to polygon()</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    <p>run for side effect of plotting</p>
+    </div>
     <div id="note">
     <h2>Note</h2>
     <p>This is more RAM-sparing than clip_rect followed by view.</p>
@@ -90,6 +94,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">luad</span> <span class="op">=</span> <span class="fu"><a href="cache_xen_luad.html">cache_xen_luad</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">pa</span> <span class="op">=</span> <span class="fu"><a href="cache_xen_luad.html">cache_xen_luad</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">luad</span> <span class="op">=</span> <span class="fu"><a href="restoreZipXenSPEP.html">restoreZipXenSPEP</a></span><span class="op">(</span><span class="va">pa</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>transcripts.parquet etc. will be overwritten</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">luad</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/make.names.html" class="external-link">make.names</a></span><span class="op">(</span><span class="fu">SummarizedExperiment</span><span class="fu">:::</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">rowData</a></span><span class="op">(</span><span class="va">luad</span><span class="op">)</span><span class="op">$</span><span class="va">Symbol</span>, unique<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">out</span> <span class="op">=</span> <span class="fu">view_seg</span><span class="op">(</span><span class="va">luad</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5800</span>, <span class="fl">6300</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1300</span>, <span class="fl">1800</span><span class="op">)</span>, lwd<span class="op">=</span><span class="fl">.5</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="view_seg-1.png" alt="" width="700" height="433"></span>

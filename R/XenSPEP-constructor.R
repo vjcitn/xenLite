@@ -1,6 +1,7 @@
 #' XenSPEP (SpatialExperiment with parquet references) constructor
 #' @importFrom SummarizedExperiment colData<-
 #' @param folder character(1) 'standard' Xenium output folder
+#' @return instance of XenSPEP
 #' @examples
 #' # is not used yet
 #' args(XenSPEP)

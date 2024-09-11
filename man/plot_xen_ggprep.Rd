@@ -13,6 +13,9 @@ plot_xen_ggprep(x, y, ...)
 
 \item{\dots}{not used}
 }
+\value{
+ggplot
+}
 \description{
 plot method for ggplot2-prepared XenSPEP
 }

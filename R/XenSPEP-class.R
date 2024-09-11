@@ -19,6 +19,7 @@ setClass("XenSPEP", contains="SpatialExperiment",  # spatial expt with parquet r
 #' display aspects of XenSPEP
 #' @importFrom methods callNextMethod new slot
 #' @param object instance of XenSPEP
+#' @return operates with cat()
 #' @export
 setMethod("show", "XenSPEP", function(object) {
   cat("XenSPEP instance.  SPEcomponent:\n")
@@ -41,6 +42,7 @@ setMethod("show", "XenSPEP", function(object) {
 #' @param j cell selection
 #' @param \dots passed to SpatialExperiment methods
 #' @param drop logical(1)
+#' @return XenSPEP instance
 #' @note Gives a message and calls callNextMethod.
 #' @export
 setMethod("[", c("XenSPEP"), function (x, i, j, ..., drop = TRUE) {
@@ -78,6 +80,7 @@ setValidity("XenSPEP", function(object) {
 #' helper function for XenSCE show method, producing dimensions for
 #' geometry information
 #' @param x instance of XenSCE
+#' @return data.frame
 xdims = function (x) 
 {
     ans = sapply(c("transcripts", "cellbounds", "nucbounds"), 
@@ -89,6 +92,7 @@ xdims = function (x)
 
 #' method for transcript extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @examples
 #' showMethods("getTranscripts")
 #' @export
@@ -96,6 +100,7 @@ setGeneric("getTranscripts", function(x) standardGeneric("getTranscripts"))
 
 #' method for transcript extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @examples
 #' showMethods("getTranscripts")
 #' @export
@@ -103,23 +108,29 @@ setMethod("getTranscripts", "XenSPEP", function(x) slot(x, "txtab"))
 
 #' method for cell boundary extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @examples
 #' showMethods("getCellBoundaries")
 #' @export
 setGeneric("getCellBoundaries", function(x) standardGeneric("getCellBoundaries"))
+
 #' method for cell boundary extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @export
 setMethod("getCellBoundaries", "XenSPEP", function(x) slot(x, "cbtab"))
 
 #' method for nucleus boundary extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @examples
 #' showMethods("getNucleusBoundaries")
 #' @export
 setGeneric("getNucleusBoundaries", function(x) standardGeneric("getNucleusBoundaries"))
+
 #' method for nucleus boundary extraction
 #' @param x instance of XenSPEP
+#' @return reference to ingested parquet
 #' @export
 setMethod("getNucleusBoundaries", "XenSPEP", function(x) slot(x, "nbtab"))
 

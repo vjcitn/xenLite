@@ -9,6 +9,9 @@ getNucleusBoundaries(x)
 \arguments{
 \item{x}{instance of XenSPEP}
 }
+\value{
+reference to ingested parquet
+}
 \description{
 method for nucleus boundary extraction
 }

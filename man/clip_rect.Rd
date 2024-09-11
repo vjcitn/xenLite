@@ -14,6 +14,9 @@ clip_rect(xsce, xlim, ylim)
 
 \item{ylim}{numeric(2)}
 }
+\value{
+XenSPEP instance
+}
 \description{
 restrict XenSPEP to cells with centroids in specified rectangle,
 also restrict boundary and transcript location features
