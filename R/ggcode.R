@@ -13,7 +13,8 @@ print_xen_ggprep = function(x, ...) {
 #' @param xlim numeric(2)
 #' @param ylim numeric(2)
 #' @note This is idiosyncratic.  Quintiles of cell_area are produced, and transcript locations
-#' are filtered
+#' are filtered.  A more general approach that allows selection of coloring
+#' of cells by feature characteristics is needed.
 #' @return a list with components `bounds` (data.frame including relevant colData
 #' rows (all colData variables) and cell boundary coordinates) and `txdata`, a filtered
 #' arrow Table.
@@ -21,6 +22,8 @@ print_xen_ggprep = function(x, ...) {
 #' pa = cache_xen_luad()
 #' luad = restoreZipXenSPEP(pa)
 #' hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
+#' ggplot2::ggplot(hh$bounds, ggplot2::aes(x=vertex_x, y=vertex_y, group=cell_id, 
+#'     colour=sizq, fill=sizq)) + ggplot2::geom_polygon(alpha=.5)
 #' @export
 ggprep_seg = function(xsce, xlim=c(5800,6200), ylim=c(6300, 6700)) {
   sampd = as.data.frame(SummarizedExperiment::colData(xsce)) # 'population level' quantiles

@@ -23,10 +23,13 @@ prepare a XenSPEP for ggplot2 visualization
 }
 \note{
 This is idiosyncratic.  Quintiles of cell_area are produced, and transcript locations
-are filtered
+are filtered.  A more general approach that allows selection of coloring
+of cells by feature characteristics is needed.
 }
 \examples{
 pa = cache_xen_luad()
 luad = restoreZipXenSPEP(pa)
 hh = ggprep_seg(luad, c(4000,4500), c(2000,2500))
+ggplot2::ggplot(hh$bounds, ggplot2::aes(x=vertex_x, y=vertex_y, group=cell_id, 
+    colour=sizq, fill=sizq)) + ggplot2::geom_polygon(alpha=.5)
 }
