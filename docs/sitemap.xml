@@ -2,6 +2,7 @@
 <url><loc>/404.html</loc></url>
 <url><loc>/articles/index.html</loc></url>
 <url><loc>/articles/xenLite.html</loc></url>
+<url><loc>/articles/zarrlook.html</loc></url>
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
 <url><loc>/reference/XenSPEP-class.html</loc></url>
@@ -26,8 +27,10 @@
 <url><loc>/reference/ingest_xen.html</loc></url>
 <url><loc>/reference/loadGeometry-XenSPEP-method.html</loc></url>
 <url><loc>/reference/loadGeometry.html</loc></url>
+<url><loc>/reference/make_cropper.html</loc></url>
 <url><loc>/reference/plot_xen_ggprep.html</loc></url>
 <url><loc>/reference/print_xen_ggprep.html</loc></url>
+<url><loc>/reference/rast_zarr.html</loc></url>
 <url><loc>/reference/reset_parq_paths.html</loc></url>
 <url><loc>/reference/restoreZipXenSPEP.html</loc></url>
 <url><loc>/reference/show-XenSPEP-method.html</loc></url>

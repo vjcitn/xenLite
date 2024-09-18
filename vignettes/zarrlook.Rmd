@@ -1,0 +1,86 @@
+---
+title: "xenLite zarrlook -- early probe of R/zarr interactions"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{xenLite zarrlook -- early probe of R/zarr interactions}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{css style settings, echo = FALSE}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
+```
+
+# Introduction
+
+This document is a very rough and ready illustration
+of a way of interacting with a Zarr store of a
+Xenium experiment.
+
+To produce the store, I followed the
+spatialdata [sandbox script](https://github.com/giovp/spatialdata-sandbox/blob/main/xenium_2.0.0_io/to_zarr.py)
+to produce a 6.6GB `data.zarr` (renamed to `lungdata.zarr`).
+
+Once this store is ready, we can use
+reticulate to explore the store using
+spatialdata and other modules.  As use
+cases emerge, we may organize these
+approaches with [basilisk](https://bioconductor.org/packages/basilisk).
+
+This document can be re-computed as long as
+reticulate can import spatialdata, spatialdata_plot,
+and matplotlib.pyplot.  EBImage should also be installed
+from Bioconductor.   Follow the sandbox script to produce
+data.zarr, then rename.
+
+# The data layout
+
+```{r lk1, eval=FALSE}
+library(reticulate)
+sda = import("spatialdata")
+sda$read_zarr("lungdata.zarr")
+```
+
+After a python warning, we have
+```
+SpatialData object, with associated Zarr store: /home/vincent/XEN_ZARR/lungdata.zarr
+├── Images
+│     ├── 'he_image': DataTree[cyx] (3, 45087, 11580), (3, 22543, 5790), (3, 11271, 2895), (3, 5635, 1447), (3, 2817, 723)
+│     └── 'morphology_focus': DataTree[cyx] (5, 17098, 51187), (5, 8549, 25593), (5, 4274, 12796), (5, 2137, 6398), (5, 1068, 3199)
+├── Labels
+│     ├── 'cell_labels': DataTree[yx] (17098, 51187), (8549, 25593), (4274, 12796), (2137, 6398), (1068, 3199)
+│     └── 'nucleus_labels': DataTree[yx] (17098, 51187), (8549, 25593), (4274, 12796), (2137, 6398), (1068, 3199)
+├── Points
+│     └── 'transcripts': DataFrame with shape: (<Delayed>, 11) (3D points)
+├── Shapes
+│     ├── 'cell_boundaries': GeoDataFrame shape: (162254, 1) (2D shapes)
+│     ├── 'cell_circles': GeoDataFrame shape: (162254, 2) (2D shapes)
+│     └── 'nucleus_boundaries': GeoDataFrame shape: (156628, 1) (2D shapes)
+└── Tables
+      └── 'table': AnnData (162254, 377)
+with coordinate systems:
+    ▸ 'global', with elements:
+        he_image (Images), morphology_focus (Images), cell_labels (Labels), nucleus_labels (Labels), transcripts (Points), cell_boundaries (Shapes), cell_circles (Shapes), nucleus_boundaries (Shapes)
+```
+
+# Visualizing a patch
+
+
+```{r tryview,message=FALSE}
+library(xenLite)
+nn = rast_zarr("lungdata.zarr")
+ii = EBImage::Image(nn, colormode="Color")
+EBImage::display(ii, method="browser") # to browser for zoom/pan
+```

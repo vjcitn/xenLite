@@ -22,6 +22,7 @@ Imports: SpatialExperiment, BiocFileCache,
 	utils, EBImage, shiny, HDF5Array,
 	arrow, ggplot2, SingleCellExperiment,
 	TENxIO, dplyr, graphics, stats
+Enhances: EBImage
 VignetteBuilder: knitr
 biocViews: Infrastructure
 RoxygenNote: 7.3.2
