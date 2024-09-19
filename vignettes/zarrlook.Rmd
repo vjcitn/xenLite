@@ -80,7 +80,15 @@ with coordinate systems:
 
 ```{r tryview,message=FALSE}
 library(xenLite)
-nn = rast_zarr("lungdata.zarr")
+nn = rast_zarr("lungdata.zarr", xlim=c(19500,21500), ylim=c(8000,8500),
+   image_name="he_image")
+ii = EBImage::Image(nn, colormode="Color")
+EBImage::display(ii, method="browser") # to browser for zoom/pan
+```
+
+```{r tryview2,message=FALSE}
+nn = rast_zarr("lungdata.zarr", xlim=c(19500,21500), ylim=c(8000,8500),
+   image_name="morphology_focus")
 ii = EBImage::Image(nn, colormode="Color")
 EBImage::display(ii, method="browser") # to browser for zoom/pan
 ```

@@ -5,7 +5,7 @@
 \title{produce an array from selected image in a spatialdata zarr store}
 \usage{
 rast_zarr(
-  zpath,
+  input,
   xlim = c(19000, 22000),
   ylim = c(8000, 8500),
   image_name = "he_image",
@@ -13,7 +13,7 @@ rast_zarr(
 )
 }
 \arguments{
-\item{zpath}{path to zarr store}
+\item{input}{path to zarr store, or a SpatialData derived from a read_zarr}
 
 \item{xlim}{extent of interest, 'horizontal' axis}
 

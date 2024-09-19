@@ -23,7 +23,7 @@ crop0 = lambda x: sda.bounding_box_query(
 }
 
 #' produce an array from selected image in a spatialdata zarr store
-#' @param zpath path to zarr store
+#' @param input path to zarr store, or a SpatialData derived from a read_zarr
 #' @param xlim extent of interest, 'horizontal' axis
 #' @param ylim extent of interest, 'vertical' axis
 #' @param image_name character(1)
@@ -41,7 +41,7 @@ crop0 = lambda x: sda.bounding_box_query(
 #' }
 #' }
 #' @export
-rast_zarr = function(zpath, xlim=c(19000,22000), ylim=c(8000,8500),
+rast_zarr = function(input, xlim=c(19000,22000), ylim=c(8000,8500),
     image_name = "he_image", target_width=800.0) {
  sda = reticulate::import("spatialdata")
  plt = reticulate::import("matplotlib.pyplot")
@@ -49,7 +49,8 @@ rast_zarr = function(zpath, xlim=c(19000,22000), ylim=c(8000,8500),
  xlim = as.double(xlim)
  ylim = as.double(ylim)
  crop0 = make_cropper(xlim, ylim)
- ndat = sda$read_zarr(zpath)
+ if (is(input, "character")) ndat = sda$read_zarr(input)  # assume input is a path
+ else ndat = input # FIXME: check class
  cc = crop0$crop0(ndat)
 # the following seems to add raster info to cc
  rr = sda$rasterize(cc, axes=reticulate::tuple("x", "y"), 
@@ -57,7 +58,7 @@ rast_zarr = function(zpath, xlim=c(19000,22000), ylim=c(8000,8500),
    max_coordinate=c(xlim[2],ylim[2]), 
    target_coordinate_system="global", 
    target_width=as.double(target_width)) # width in pixels
- p1 = cc$images$pop('he_image') # should parameterize, but how to 
+ p1 = cc$images$pop(image_name) # should parameterize, but how to 
                                # learn available names?
  dd = p1$to_dict()
  a0 = dd["/scale0"]$to_array()
