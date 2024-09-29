@@ -7,4 +7,3 @@
 #' data(e79sym)
 #' head(e79sym)
 "e79sym"
-

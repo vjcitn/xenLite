@@ -22,8 +22,8 @@ counts-in-memory version of melanoma 5k dataset
 }
 \examples{
 if (interactive()) {
-   pa = cacheXenPdmelLite()
-   pdmel_lite = restoreZipXenSPEP(pa)
-   print(pdmel_lite)
+  pa <- cacheXenPdmelLite()
+  pdmel_lite <- restoreZipXenSPEP(pa)
+  print(pdmel_lite)
 }
 }

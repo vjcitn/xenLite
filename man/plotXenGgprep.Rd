@@ -23,8 +23,8 @@ plot method for ggplot2-prepared XenSPEP
 roxygen had problems with this
 }
 \examples{
-pa = cacheXenLuad()
-luad = restoreZipXenSPEP(pa)
-hh = ggprepSeg(luad, c(4000,4500), c(2000,2500))
+pa <- cacheXenLuad()
+luad <- restoreZipXenSPEP(pa)
+hh <- ggprepSeg(luad, c(4000, 4500), c(2000, 2500))
 plotXenGgprep(hh)
 }

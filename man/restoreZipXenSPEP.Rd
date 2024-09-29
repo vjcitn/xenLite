@@ -18,12 +18,12 @@ instance of XenSPEP
 use unzip, readRDS, and loadGeometry to restore a XenSPEP
 }
 \note{
-Session folder position will change with setwd(), on.exit ensures return to 
+Session folder position will change with setwd(), on.exit ensures return to
 position when started.
 }
 \examples{
 # used implicitly
 if (interactive()) {
-example(cacheXenLuad)
+  example(cacheXenLuad)
 }
 }

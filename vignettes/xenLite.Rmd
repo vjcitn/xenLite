@@ -52,6 +52,13 @@ low volume experiments.
 As of 0.0.7 of xenLite, a new class, XenSPEP, is provided to address
 parquet representation of cell, nucleus and transcript coordinates.
 
+## Installation
+
+To install in Bioconductor 3.20 or later:
+```{r doinst,eval=FALSE}
+BiocManager::install("xenLite")
+```
+
 
 ## Data
 
@@ -90,11 +97,11 @@ occupancy.
 
 ```{r dolung, fig.width=7, fig.height=7,message=FALSE}
 library(xenLite)
-pa = cacheXenLuad()
-luad = restoreZipXenSPEP(pa)
-rownames(luad) = make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique=TRUE)
-out = viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
-legend(5800,1390, fill=c("purple", "cyan", "pink"), legend=c("CD4", "EPCAM", "both"))
+pa <- cacheXenLuad()
+luad <- restoreZipXenSPEP(pa)
+rownames(luad) <- make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique = TRUE)
+out <- viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd = .5, gene1 = "CD4", gene2 = "EPCAM")
+legend(5800, 1390, fill = c("purple", "cyan", "pink"), legend = c("CD4", "EPCAM", "both"))
 out$ncells
 ```
 
@@ -128,21 +135,25 @@ commitments.
 We'll use the prostate adenocarcinoma 5K dataset to demonstrate.
 A 900MB zip file will be cached.
 ```{r doprost1,eval=FALSE}
-prost = cacheXenProstLite()
+prost <- cacheXenProstLite()
 ```
 `prost` is the path to a zip file in a BiocFileCache instance.
 
 Create a folder to work in, and unzip.
 ```{r doprost2,eval=FALSE}
 dir.create(xpw <- file.path(tempdir(), "prost_work"))
-unzip(prost, exdir=xpw)
+unzip(prost, exdir = xpw)
 dir(xpw)
 ```
 
 Restore the SpatialExperiment component.
 ```{r doprost3,eval=FALSE}
-prostx = HDF5Array::loadHDF5SummarizedExperiment(file.path(xpw, "xen_prost"))
+prostx <- HDF5Array::loadHDF5SummarizedExperiment(file.path(xpw, "xen_prost"))
 prostx
 ```
 
+# Session information
 
+```{r lksi}
+sessionInfo()
+```

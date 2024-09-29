@@ -22,8 +22,8 @@ counts-in-memory version of prostate 5k dataset
 }
 \examples{
 if (interactive()) {
-   pa = cacheXenProstLite()
-   prost_lite = restoreZipXenSPEP(pa)
-   print(prost_lite)
+  pa <- cacheXenProstLite()
+  prost_lite <- restoreZipXenSPEP(pa)
+  print(prost_lite)
 }
 }

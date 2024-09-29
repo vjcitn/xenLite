@@ -9,13 +9,15 @@
 #' @examples
 #' zipXenSPEP
 #' @export
-zipXenSPEP = function(xsp, targetfile) {
+zipXenSPEP <- function(xsp, targetfile) {
   stopifnot(is(xsp, "XenSPEP"))
   stopifnot(isTRUE(slot(xsp, "loaded")))
-  pas = unlist(lapply(c("cellbounds_path", "nucbounds_path", "tx_path"),
-      function(x) slot(xsp, x)))
-  rdstarg = paste0(basename(tempfile()), ".rds")
-  saveRDS(xsp, file=rdstarg, compress="xz")
+  pas <- unlist(lapply(
+    c("cellbounds_path", "nucbounds_path", "tx_path"),
+    function(x) slot(xsp, x)
+  ))
+  rdstarg <- paste0(basename(tempfile()), ".rds")
+  saveRDS(xsp, file = rdstarg, compress = "xz")
   zip(targetfile, c(rdstarg, pas))
 }
 
@@ -23,24 +25,24 @@ zipXenSPEP = function(xsp, targetfile) {
 #' @param zipf character(1) path to zip file created with `zipXenSPEP`
 #' @param exdir character(1) defaults to tempdir(), where contents are unpacked
 #' @return instance of XenSPEP
-#' @note Session folder position will change with setwd(), on.exit ensures return to 
+#' @note Session folder position will change with setwd(), on.exit ensures return to
 #' position when started.
 #' @examples
 #' # used implicitly
 #' if (interactive()) {
-#' example(cacheXenLuad)
+#'   example(cacheXenLuad)
 #' }
 #' @export
-restoreZipXenSPEP = function(zipf, exdir=tempdir()) {
-  ini = getwd()
+restoreZipXenSPEP <- function(zipf, exdir = tempdir()) {
+  ini <- getwd()
   on.exit(setwd(ini))
-  fns = unzip(zipf, list=TRUE)
-  toread = grep("rds$", fns$Name, value=TRUE)
+  fns <- unzip(zipf, list = TRUE)
+  toread <- grep("rds$", fns$Name, value = TRUE)
   if (file.exists(file.path(exdir, "transcripts.parquet"))) warning("transcripts.parquet etc. will be overwritten")
-  unzip(zipf, exdir=exdir)
-  ans = readRDS(file.path(exdir, toread))
+  unzip(zipf, exdir = exdir)
+  ans <- readRDS(file.path(exdir, toread))
   setwd(exdir)
-  ans = loadGeometry(ans)
-  ans = resetParqPaths(ans, base=exdir)
+  ans <- loadGeometry(ans)
+  ans <- resetParqPaths(ans, base = exdir)
   ans
 }

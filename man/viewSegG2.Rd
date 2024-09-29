@@ -33,11 +33,11 @@ This is more RAM-sparing than clipRect followed by view.  Colors are
 pre-assigned for individual and joint occupancies in this draft of this visualizer.
 }
 \examples{
-luad = cacheXenLuad()
-pa = cacheXenLuad()
-luad = restoreZipXenSPEP(pa)
-rownames(luad) = make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique=TRUE)
-out = viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
-legend(5800,1370, fill=c("purple", "cyan", "pink"), legend=c("CD4", "EPCAM", "both"))
+luad <- cacheXenLuad()
+pa <- cacheXenLuad()
+luad <- restoreZipXenSPEP(pa)
+rownames(luad) <- make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique = TRUE)
+out <- viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd = .5, gene1 = "CD4", gene2 = "EPCAM")
+legend(5800, 1370, fill = c("purple", "cyan", "pink"), legend = c("CD4", "EPCAM", "both"))
 out$ncells
 }

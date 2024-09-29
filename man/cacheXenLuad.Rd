@@ -24,10 +24,10 @@ accompanied by parquet
 }
 \examples{
 if (interactive()) {
-   pa = cacheXenLuad()
-   luad = restoreZipXenSPEP(pa)
-   print(luad)
-   print(slot(luad, "cellbounds_path"))
-   viewSeg(luad, xlim=c(4000,4500), ylim=c(2000,2500))
+  pa <- cacheXenLuad()
+  luad <- restoreZipXenSPEP(pa)
+  print(luad)
+  print(slot(luad, "cellbounds_path"))
+  viewSeg(luad, xlim = c(4000, 4500), ylim = c(2000, 2500))
 }
 }

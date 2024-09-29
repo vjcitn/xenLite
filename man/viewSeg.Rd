@@ -27,10 +27,10 @@ naive polygon viewer
 This is more RAM-sparing than clipRect followed by view.
 }
 \examples{
-luad = cacheXenLuad()
-pa = cacheXenLuad()
-luad = restoreZipXenSPEP(pa)
-rownames(luad) = make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique=TRUE)
-out = viewSeg(luad, c(5800, 6300), c(1300, 1800), lwd=.5)
+luad <- cacheXenLuad()
+pa <- cacheXenLuad()
+luad <- restoreZipXenSPEP(pa)
+rownames(luad) <- make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique = TRUE)
+out <- viewSeg(luad, c(5800, 6300), c(1300, 1800), lwd = .5)
 out$ncells
 }
