@@ -59,23 +59,23 @@ This package is based on publicly available datasets.
 
 
 - **Human dermal melanoma** [FFPE Human pan tissue dataset](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin).  For this dataset, we
-retrieved the `outs.zip` file from this site and ran `XenSCE::ingest_xen`
+retrieved the `outs.zip` file from this site and ran `XenSCE::ingestXen`
 on the contents, producing a XenSPEP instance which was then saved
 in an HDF5-backed representation.  This, along with the parquet
 files for cell, nucleus, and transcript coordinates, are zipped together
 and placed in an Open Storage Network bucket for retrieval via
-`cache_xen_pdmel_lite`.
+`cacheXenPdmelLite`.
 
 - **Human prostate adenocarcinoma** [FFPE Human pan tissue dataset](https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-prostate).  For this dataset, we
-retrieved the `outs.zip` file from this site and ran `XenSCE::ingest_xen`
+retrieved the `outs.zip` file from this site and ran `XenSCE::ingestXen`
 on the contents, producing a XenSPEP instance which was then saved
 in an HDF5-backed representation.  This, along with the parquet
 files for cell, nucleus, and transcript coordinates, are zipped together
 and placed in an Open Storage Network bucket for retrieval via
-`cache_xen_prost_lite`.
+`cacheXenProstLite`.
 
 - **Human Lung** [FFPE Lung cancer preview](https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard), 
-Use `example(cache_xen_luad)` to obtain this instance of XenSPEP.
+Use `example(cacheXenLuad)` to obtain this instance of XenSPEP.
 
 ## A quick look
 
@@ -83,18 +83,17 @@ Use `example(cache_xen_luad)` to obtain this instance of XenSPEP.
 
 In this example, transcript counts are in memory
 in a sparse matrix, but geometry information is
-handled in parquet.  The `view_seg_g2` function
+handled in parquet.  The `viewSegG2` function
 allows selection of two gene symbols, and
 cells are colored according to single or double
 occupancy.
 
 ```{r dolung, fig.width=7, fig.height=7,message=FALSE}
 library(xenLite)
-luad = cache_xen_luad()
-pa = cache_xen_luad()
+pa = cacheXenLuad()
 luad = restoreZipXenSPEP(pa)
 rownames(luad) = make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique=TRUE)
-out = view_seg_g2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
+out = viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
 legend(5800,1390, fill=c("purple", "cyan", "pink"), legend=c("CD4", "EPCAM", "both"))
 out$ncells
 ```
@@ -129,7 +128,7 @@ commitments.
 We'll use the prostate adenocarcinoma 5K dataset to demonstrate.
 A 900MB zip file will be cached.
 ```{r doprost1,eval=FALSE}
-prost = cache_xen_prost_lite()
+prost = cacheXenProstLite()
 ```
 `prost` is the path to a zip file in a BiocFileCache instance.
 

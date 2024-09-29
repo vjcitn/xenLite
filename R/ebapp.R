@@ -34,7 +34,7 @@ demoapp = function(simple=FALSE) {
   
   server=function(input, output) {
    getImg = reactive({
-    if (simple) dat = cache_mtif()
+    if (simple) dat = cacheMtif()
     else {
       validate(need(nchar(input$inimg)>0, "pick img"))
       dat = input$inimg$datapath 

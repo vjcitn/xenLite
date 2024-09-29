@@ -28,7 +28,7 @@ zipXenSPEP = function(xsp, targetfile) {
 #' @examples
 #' # used implicitly
 #' if (interactive()) {
-#' example(cache_xen_luad)
+#' example(cacheXenLuad)
 #' }
 #' @export
 restoreZipXenSPEP = function(zipf, exdir=tempdir()) {
@@ -41,6 +41,6 @@ restoreZipXenSPEP = function(zipf, exdir=tempdir()) {
   ans = readRDS(file.path(exdir, toread))
   setwd(exdir)
   ans = loadGeometry(ans)
-  ans = reset_parq_paths(ans, base=exdir)
+  ans = resetParqPaths(ans, base=exdir)
   ans
 }

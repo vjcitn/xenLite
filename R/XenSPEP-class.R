@@ -83,8 +83,8 @@ setValidity("XenSPEP", function(object) {
 #' @return data.frame
 xdims = function (x) 
 {
-    ans = sapply(c("transcripts", "cellbounds", "nucbounds"), 
-        function(z) dim(slot(x, z)))
+    ans = vapply(c("transcripts", "cellbounds", "nucbounds"), 
+        function(z) dim(slot(x, z)),numeric(2))
     ans = t(ans)
     colnames(ans) = c("nrow", "ncol")
     data.frame(ans)

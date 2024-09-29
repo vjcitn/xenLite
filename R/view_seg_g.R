@@ -7,20 +7,20 @@
 #' @param gene1 character(1) gene to be checked, cell polygon will be filled if gene has non-zero count
 #' @param gene2 character(1) gene to be checked, cell polygon will be filled if gene has non-zero count
 #' @param \dots passed to polygon()
-#' @note This is more RAM-sparing than clip_rect followed by view.  Colors are
+#' @note This is more RAM-sparing than clipRect followed by view.  Colors are
 #' pre-assigned for individual and joint occupancies in this draft of this visualizer.
 #' @return Primarily for plotting.  A list is invisibly returned with elements polys,
 #' ncells and call.
 #' @examples
-#' luad = cache_xen_luad()
-#' pa = cache_xen_luad()
+#' luad = cacheXenLuad()
+#' pa = cacheXenLuad()
 #' luad = restoreZipXenSPEP(pa)
 #' rownames(luad) = make.names(SummarizedExperiment:::rowData(luad)$Symbol, unique=TRUE)
-#' out = view_seg_g2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
+#' out = viewSegG2(luad, c(5800, 6300), c(1300, 1800), lwd=.5, gene1="CD4", gene2="EPCAM")
 #' legend(5800,1370, fill=c("purple", "cyan", "pink"), legend=c("CD4", "EPCAM", "both"))
 #' out$ncells
 #' @export
-view_seg_g2 = function (x, xlim, ylim, gene1, gene2, show_tx = FALSE, ...) 
+viewSegG2 = function (x, xlim, ylim, gene1, gene2, show_tx = FALSE, ...) 
 {
     stopifnot(gene1 %in% rownames(x))
     stopifnot(gene2 %in% rownames(x))
@@ -28,7 +28,7 @@ view_seg_g2 = function (x, xlim, ylim, gene1, gene2, show_tx = FALSE, ...)
     if (!requireNamespace("SpatialExperiment")) 
         stop("install SpatialExperiment to use this function.")
     ppdf = data.frame(SpatialExperiment::spatialCoords(x))
-    rngs = sapply(ppdf[, c("x_centroid", "y_centroid")], range)
+    rngs = vapply(ppdf[, c("x_centroid", "y_centroid")], range, numeric(2))
     cb = getCellBoundaries(x)
     cb2 = cb[cb$vertex_x > xlim[1] & cb$vertex_x < xlim[2] & 
         cb$vertex_y > ylim[1] & cb$vertex_y < ylim[2], ]
@@ -38,7 +38,7 @@ view_seg_g2 = function (x, xlim, ylim, gene1, gene2, show_tx = FALSE, ...)
         stop("no observations for cell boundaries.")
     scb2w = split(cb2w, cb2w$cell_id)
     ncells = length(scb2w)
-    rngs = sapply(cb2w[, c("vertex_x", "vertex_y")], range)
+    rngs = vapply(cb2w[, c("vertex_x", "vertex_y")], range, numeric(2))
     plot(rngs[1, 1], rngs[1, 2], xlim = rngs[, 1], ylim = rngs[, 
         2], xlab = "x", ylab = "y", pch = " ")
     pres1 = as.matrix(SummarizedExperiment::assay(x[gene1, un])) > 
@@ -81,12 +81,12 @@ view_seg_g2 = function (x, xlim, ylim, gene1, gene2, show_tx = FALSE, ...)
 }
 
 
-view_seg_g = function(x, xlim, ylim, gene, show_tx=FALSE, ...) {
+viewSegG = function(x, xlim, ylim, gene, show_tx=FALSE, ...) {
   stopifnot(gene %in% rownames(x))
   cc = match.call()
   if (!requireNamespace("SpatialExperiment")) stop("install SpatialExperiment to use this function.")
   ppdf = data.frame(SpatialExperiment::spatialCoords(x))
-  rngs = sapply(ppdf[, c("x_centroid", "y_centroid")], range)
+  rngs = vapply(ppdf[, c("x_centroid", "y_centroid")], range, numeric(2))
 #  stopifnot(rngs
   cb = getCellBoundaries(x)
   cb2 = cb[cb$vertex_x > xlim[1] & cb$vertex_x < xlim[2] & cb$vertex_y > ylim[1] & cb$vertex_y < ylim[2],]
@@ -95,7 +95,7 @@ view_seg_g = function(x, xlim, ylim, gene, show_tx=FALSE, ...) {
   if (nrow(cb2w)==0) stop("no observations for cell boundaries.")
   scb2w = split(cb2w, cb2w$cell_id)
   ncells = length(scb2w)
-  rngs = sapply(cb2w[,c("vertex_x", "vertex_y")], range)
+  rngs = vapply(cb2w[,c("vertex_x", "vertex_y")], range, numeric(2))
   plot(rngs[1,1], rngs[1,2], xlim=rngs[,1], ylim=rngs[,2], xlab="x", ylab="y", pch = " ")
   pres = as.matrix(SummarizedExperiment::assay(x[gene,un]))>0
   zz = lapply(seq_len(length(scb2w)), function(i, ...) {

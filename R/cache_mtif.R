@@ -6,13 +6,13 @@
 #' and depicts a pancreas tissue sample.
 #' @return path to cached resource
 #' @examples
-#' pa = cache_mtif()
+#' pa = cacheMtif()
 #' if (!requireNamespace("tiff")) stop("install tiff package to run this example")
 #' x = tiff::readTIFF(pa)
 #' plot(0, xlim=c(0,1000), ylim=c(0,1000),xlab=" ", ylab=" ")
 #' rasterImage(x*5.5, 0, 0, 1000, 1000)
 #' @export
-cache_mtif = function(cache=BiocFileCache::BiocFileCache(), 
+cacheMtif = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/morphology_focus_0001.ome.tif") {
  chk = bfcquery(cache, "BiocXenData/morphology_focus_0001.ome.tif")
  n = nrow(chk)
@@ -25,7 +25,7 @@ cache_mtif = function(cache=BiocFileCache::BiocFileCache(),
 #' @param url location where zip file can be retrieved
 #' @return path to cached resource
 #' @note Lacks transcript coordinates
-cache_sfeLung_ntx = function(cache=BiocFileCache::BiocFileCache(), 
+cacheSfeLungNtx = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/sfeLung.zip") {
  chk = bfcquery(cache, "BiocXenData/sfeLung.zip")
  n = nrow(chk)
@@ -40,14 +40,14 @@ cache_sfeLung_ntx = function(cache=BiocFileCache::BiocFileCache(),
 #' @return path to cached resource
 #' @examples
 #' if (interactive()) {
-#'    pa = cache_xen_luad()
+#'    pa = cacheXenLuad()
 #'    luad = restoreZipXenSPEP(pa)
 #'    print(luad)
 #'    print(slot(luad, "cellbounds_path"))
-#'    view_seg(luad, xlim=c(4000,4500), ylim=c(2000,2500))
+#'    viewSeg(luad, xlim=c(4000,4500), ylim=c(2000,2500))
 #' }
 #' @export
-cache_xen_luad = function(cache=BiocFileCache::BiocFileCache(), 
+cacheXenLuad = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/luad_lite.zip") {
  chk = bfcquery(cache, "BiocXenData/luad_lite.zip")
  n = nrow(chk)
@@ -61,12 +61,12 @@ cache_xen_luad = function(cache=BiocFileCache::BiocFileCache(),
 #' @return path to cached resource
 #' @examples
 #' if (interactive()) {
-#'    pa = cache_xen_prost_lite()
+#'    pa = cacheXenProstLite()
 #'    prost_lite = restoreZipXenSPEP(pa)
 #'    print(prost_lite)
 #' }
 #' @export
-cache_xen_prost_lite = function(cache=BiocFileCache::BiocFileCache(), 
+cacheXenProstLite = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/prost_lite.zip") {
  chk = bfcquery(cache, "BiocXenData/prost_lite.zip")
  n = nrow(chk)
@@ -80,12 +80,12 @@ cache_xen_prost_lite = function(cache=BiocFileCache::BiocFileCache(),
 #' @return path to cached resource
 #' @examples
 #' if (interactive()) {
-#'    pa = cache_xen_pdmel_lite()
+#'    pa = cacheXenPdmelLite()
 #'    pdmel_lite = restoreZipXenSPEP(pa)
 #'    print(pdmel_lite)
 #' }
 #' @export
-cache_xen_pdmel_lite = function(cache=BiocFileCache::BiocFileCache(), 
+cacheXenPdmelLite = function(cache=BiocFileCache::BiocFileCache(), 
    url="https://mghp.osn.xsede.org/bir190004-bucket01/BiocXenData/pdmel_lite.zip") {
  chk = bfcquery(cache, "BiocXenData/pdmel_lite.zip")
  n = nrow(chk)

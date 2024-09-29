@@ -55,9 +55,9 @@ txfeatsInBox = function (xsce, feat="transcripts", xlim, ylim)  # may have colna
 #' @note Could be too RAM-hungry.
 #' @return XenSPEP instance
 #' @examples
-#' args(clip_rect)
+#' args(clipRect)
 #' @export
-clip_rect = function(xsce, xlim, ylim) {
+clipRect = function(xsce, xlim, ylim) {
   nn = namesInBox(xsce, xlim, ylim)
   stopifnot(length(nn)>0)
   ini = xsce[, nn]

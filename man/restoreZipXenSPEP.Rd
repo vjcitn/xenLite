@@ -24,6 +24,6 @@ position when started.
 \examples{
 # used implicitly
 if (interactive()) {
-example(cache_xen_luad)
+example(cacheXenLuad)
 }
 }
