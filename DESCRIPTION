@@ -1,7 +1,7 @@
 Package: xenLite
 Date: 2024-09-07
 Title: Simple classes and methods for managing Xenium datasets
-Version: 0.99.1
+Version: 0.99.2
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
@@ -16,7 +16,7 @@ License: Artistic-2.0
 Encoding: UTF-8
 Depends: R (>= 4.1)
 Suggests: knitr, testthat, BiocStyle, yesno, terra, 
-	SpatialFeatureExperiment, SFEData, tiff
+	SpatialFeatureExperiment, SFEData, tiff, reticulate
 Imports: SpatialExperiment, BiocFileCache, 
 	Matrix, S4Vectors, SummarizedExperiment, methods,
 	utils, EBImage, shiny, HDF5Array,
