@@ -5,10 +5,9 @@
 #' slot values.
 #' @return XenSPEP instance
 #' @export
-reset_parq_paths = function(xsp, base) {
-  xsp@cellbounds_path = file.path(base, basename(xsp@cellbounds_path))
-  xsp@nucbounds_path = file.path(base, basename(xsp@nucbounds_path))
-  xsp@tx_path = file.path(base, basename(xsp@tx_path))
+resetParqPaths <- function(xsp, base) {
+  xsp@cellbounds_path <- file.path(base, basename(xsp@cellbounds_path))
+  xsp@nucbounds_path <- file.path(base, basename(xsp@nucbounds_path))
+  xsp@tx_path <- file.path(base, basename(xsp@tx_path))
   xsp
 }
-
