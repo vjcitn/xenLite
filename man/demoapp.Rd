@@ -19,5 +19,5 @@ simple app to explore an image
 Navigate file input control to location of tiffs
 }
 \examples{
-if (interactive()) demoapp(simple=TRUE)
+if (interactive()) demoapp(simple = TRUE)
 }
