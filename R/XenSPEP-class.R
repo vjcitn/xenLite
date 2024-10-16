@@ -69,38 +69,38 @@ setMethod("[", c("XenSPEP"), function(x, i, j, ..., drop = TRUE) {
 
 
 
-setValidity("XenSPEP", function(object) {
-  cb <- arrow::read_parquet(object@cellbounds_path)
-  nb <- arrow::read_parquet(object@nucbounds_path)
-  tx <- arrow::read_parquet(object@tx_path)
-  if (!(all(c("vertex_x", "vertex_y") %in% names(cb)))) {
-    return(sprintf("'vertex_x' or 'vertex_y' absent from %s", object@cellbounds_path))
-  }
-  if (!(all(c("vertex_x", "vertex_y") %in% names(nb)))) {
-    return(sprintf("'vertex_x' or 'vertex_y' absent from %s", object@nucbounds_path))
-  }
-  if (!(all(c("x_location", "y_location", "z_location") %in% names(tx)))) {
-    return(sprintf("'x_location' or 'y_location' or 'z_location' absent from %s", object@nucbounds_path))
-  }
-  TRUE
-})
+#setValidity("XenSPEP", function(object) {
+#  cb <- arrow::read_parquet(object@cellbounds_path)
+#  nb <- arrow::read_parquet(object@nucbounds_path)
+#  tx <- arrow::read_parquet(object@tx_path)
+#  if (!(all(c("vertex_x", "vertex_y") %in% names(cb)))) {
+#    return(sprintf("'vertex_x' or 'vertex_y' absent from %s", object@cellbounds_path))
+#  }
+#  if (!(all(c("vertex_x", "vertex_y") %in% names(nb)))) {
+#    return(sprintf("'vertex_x' or 'vertex_y' absent from %s", object@nucbounds_path))
+#  }
+#  if (!(all(c("x_location", "y_location", "z_location") %in% names(tx)))) {
+#    return(sprintf("'x_location' or 'y_location' or 'z_location' absent from %s", object@nucbounds_path))
+#  }
+#  TRUE
+#})
 
 
 
 
-#' helper function for XenSCE show method, producing dimensions for
-#' geometry information
-#' @param x instance of XenSCE
-#' @return data.frame
-xdims <- function(x) {
-  ans <- vapply(
-    c("transcripts", "cellbounds", "nucbounds"),
-    function(z) dim(slot(x, z)), numeric(2)
-  )
-  ans <- t(ans)
-  colnames(ans) <- c("nrow", "ncol")
-  data.frame(ans)
-}
+# helper function for XenSCE show method, producing dimensions for
+# geometry information
+# @param x instance of XenSCE
+# @return data.frame
+#xdims <- function(x) {
+#  ans <- vapply(
+#    c("transcripts", "cellbounds", "nucbounds"),
+#    function(z) dim(slot(x, z)), numeric(2)
+#  )
+#  ans <- t(ans)
+#  colnames(ans) <- c("nrow", "ncol")
+#  data.frame(ans)
+#}
 
 #' method for transcript extraction
 #' @param x instance of XenSPEP
