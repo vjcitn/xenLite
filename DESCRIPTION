@@ -1,7 +1,7 @@
 Package: xenLite
 Date: 2024-09-19
 Title: Simple classes and methods for managing Xenium datasets
-Version: 0.99.5
+Version: 1.0.0
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
