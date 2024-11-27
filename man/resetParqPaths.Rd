@@ -19,5 +19,5 @@ utility for dealing with cached Xen_SPEP in temp folder
 }
 \note{
 Will prepend current folder path to parquet-oriented
-slot values.
+slot values.  It may be necessary to reload geometry via loadGeometry().
 }
