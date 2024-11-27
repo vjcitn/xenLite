@@ -2,7 +2,7 @@
 #' @param xsp instance of XenSPEP
 #' @param base folder path where parquet files are found
 #' @note Will prepend current folder path to parquet-oriented
-#' slot values.
+#' slot values.  It may be necessary to reload geometry via loadGeometry().
 #' @return XenSPEP instance
 #' @export
 resetParqPaths <- function(xsp, base) {

@@ -1,0 +1,24 @@
+#' acquire path to cached 2 field of view test data from Xenium 2.0.0 test data repo, breast tissue
+#' @param cache like BiocFileCache
+#' @param url character(1) defaults to value valid at 27 Nov 2024
+#' @examples
+#' br2pa = cacheXenBr2fov()
+#' td = tempfile()
+#' unzip(br2pa, exdir=td)
+#' br2fov = ingest_xen(td)
+#' br2fov = loadGeometry(br2fov)
+#' br2fov
+#' br2fov@cbtab |> as.data.frame() |> lapply(range)
+#' viewSeg(br2fov, c(0,1231), c(1, 748))
+#' @export
+cacheXenBr2fov <- function(
+    cache = BiocFileCache::BiocFileCache(),
+    url = "https://cf.10xgenomics.com/samples/xenium/2.0.0/Xenium_V1_human_Breast_2fov/Xenium_V1_human_Breast_2fov_outs.zip") {
+  chk <- bfcquery(cache, "Xenium_V1_human_Breast_2fov_outs.zip")
+  n <- nrow(chk)
+  if (n >= 1) {
+    return(chk[n, ]$rpath)
+  }
+  bfcadd(cache, rname = basename(url), fpath = url, action = "copy", download = TRUE)
+}
+

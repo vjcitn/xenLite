@@ -2,6 +2,7 @@
 
 export(XenSPEP)
 export(cacheMtif)
+export(cacheXenBr2fov)
 export(cacheXenLuad)
 export(cacheXenPdmelLite)
 export(cacheXenProstLite)
