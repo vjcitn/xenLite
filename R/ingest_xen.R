@@ -51,6 +51,7 @@ ingest_xen <- function(folder) {
   rownames(cd) <- cd[, 1]
   cd <- S4Vectors::DataFrame(cd)
   colData(sce) <- cd
+  colnames(sce) = cd[,1L]  # is it guaranteed?
   spe <- as(sce, "SpatialExperiment") # propagates assayNames
   SpatialExperiment::spatialCoords(spe) <- data.matrix(cd[, c("x_centroid", "y_centroid")])
   cb <- arrow::read_parquet(cbpath)
